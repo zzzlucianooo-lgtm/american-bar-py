@@ -1,0 +1,2746 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Montserrat:wght@400;500;600;700;800&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+
+:root {
+  font-family: 'Montserrat', sans-serif;
+  color: #fff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #090909;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+
+.site {
+  min-height: 100vh;
+  overflow-x: clip;
+}
+
+
+/* NAVEGACIÓN */
+
+.navbar {
+  height: 90px;
+  width: 100%;
+  padding: 0 6%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 20;
+  border-bottom: 1px solid rgba(255,255,255,.12);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 26px;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+.brand strong,
+.brand-icon {
+  color: #ffd21c;
+}
+
+.brand-icon {
+  font-size: 32px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 35px;
+}
+
+.nav-links a {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  transition: color .3s;
+}
+
+.nav-links a:hover {
+  color: #ffd21c;
+}
+
+.nav-button {
+  padding: 14px 22px;
+  border: 2px solid #ffd21c;
+  color: #ffd21c;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  transition: .3s;
+}
+
+.nav-button:hover {
+  background: #ffd21c;
+  color: #090909;
+}
+
+/* HERO */
+
+.hero {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  padding: 130px 8% 90px;
+  isolation: isolate;
+  background:
+    radial-gradient(ellipse at 80% 45%, #29313a 0%, transparent 48%),
+    radial-gradient(ellipse at 90% 90%, #481a1d 0%, transparent 40%),
+    linear-gradient(115deg, #080808 20%, #17191d 100%);
+}
+
+/* TEXTURA DE PUNTOS ESTILO CÓMIC */
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  opacity: .18;
+  background-image:
+    radial-gradient(#fff 0.7px, transparent 0.7px);
+  background-size: 7px 7px;
+  mask-image: linear-gradient(to right, transparent 15%, black);
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(
+    90deg,
+    rgba(0,0,0,.65) 0%,
+    rgba(0,0,0,.2) 60%,
+    transparent 100%
+  );
+}
+
+.hero-content {
+  position: relative;
+  z-index: 5;
+  max-width: 750px;
+}
+
+.hero-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #ffd21c;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  margin-bottom: 24px;
+}
+
+.eyebrow-line {
+  width: 35px;
+  height: 3px;
+  background: #ffd21c;
+}
+
+.hero h1 {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: clamp(85px, 11vw, 180px);
+  font-weight: 900;
+  line-height: .78;
+  letter-spacing: -3px;
+  text-transform: uppercase;
+  text-shadow: 5px 8px 0 rgba(0,0,0,.45);
+}
+
+
+.title-yellow {
+  color: #ffd21c;
+  margin-top: 12px;
+  font-family: 'Permanent Marker', cursive;
+  font-size: 0.78em;
+  font-weight: 400;
+  letter-spacing: -3px;
+  transform: rotate(-4deg);
+  transform-origin: left center;
+  text-shadow: 5px 7px 0 rgba(0, 0, 0, 0.45);
+}
+
+
+.hero-subtitle {
+  margin: 35px 0 20px;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.hero-subtitle span {
+  color: #ffd21c;
+  margin: 0 5px;
+}
+
+.hero-description {
+  max-width: 470px;
+  color: #c6c6c6;
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 35px;
+}
+
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 55px;
+  padding: 0 30px;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  transition: transform .3s, background .3s, color .3s;
+}
+
+.btn:hover {
+  transform: translateY(-4px);
+}
+
+.btn-yellow {
+  background: #ffd21c;
+  color: #090909;
+}
+
+.btn-outline {
+  border: 2px solid rgba(255,255,255,.7);
+  color: white;
+}
+
+.btn-outline:hover {
+  background: white;
+  color: #090909;
+}
+
+/* CAPAS ARTÍSTICAS */
+
+.hero-art {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.flag-art {
+  position: absolute;
+  right: -10%;
+  top: 15%;
+  width: 55%;
+  height: 65%;
+  transform: rotate(-13deg);
+  background: linear-gradient(
+    180deg,
+    #c6212c 0% 33.33%,
+    #eee 33.33% 66.66%,
+    #164b9b 66.66% 100%
+  );
+  opacity: .25;
+  filter: blur(35px);
+}
+
+.liberty-art {
+  position: absolute;
+  right: 10%;
+  bottom: 0;
+  width: 35%;
+  height: 75%;
+  background: radial-gradient(
+    ellipse at bottom,
+    rgba(255,210,28,.13),
+    transparent 70%
+  );
+}
+
+.comic-shape {
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  filter: blur(75px);
+  opacity: .2;
+  border-radius: 50%;
+}
+
+.comic-red {
+  right: -100px;
+  bottom: -100px;
+  background: #e01c2c;
+}
+
+.comic-blue {
+  right: 20%;
+  top: 10%;
+  background: #1555b6;
+}
+
+.hero-bottom {
+  position: absolute;
+  bottom: 30px;
+  left: 8%;
+  right: 8%;
+  display: flex;
+  justify-content: space-between;
+  color: #a0a0a0;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+  .navbar {
+    padding: 0 5%;
+    height: 75px;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .hero {
+    padding: 160px 6% 100px;
+  }
+
+  .hero h1 {
+    font-size: clamp(65px, 13vw, 120px);
+  }
+
+  .hero-content {
+    max-width: 100%;
+  }
+
+  .flag-art {
+    width: 100%;
+    right: -35%;
+    opacity: .15;
+  }
+
+  .liberty-art {
+    width: 70%;
+    right: -20%;
+    opacity: .35;
+  }
+
+  .hero-bottom {
+    left: 6%;
+    right: 6%;
+  }
+}
+
+@media (max-width: 480px) {
+  .brand {
+    font-size: 21px;
+  }
+
+  .nav-button {
+    padding: 11px;
+    font-size: 9px;
+  }
+
+  .hero h1 {
+    font-size: clamp(60px, 15vw, 85px);
+    letter-spacing: -1px;
+  }
+
+  .hero-eyebrow {
+    font-size: 9px;
+    letter-spacing: 1.5px;
+  }
+
+  .hero-subtitle {
+    font-size: 10px;
+    line-height: 2;
+  }
+
+  .hero-bottom {
+    font-size: 8px;
+    letter-spacing: 1px;
+  }
+}
+
+/* ESTATUA DE LA LIBERTAD + BANDERA */
+
+
+
+
+
+.hero-statue {
+  position: absolute;
+  height: 88%;
+  width: auto;
+  max-width: none;
+
+ 
+right: -12%;
+
+  bottom: 0;
+
+  transform: none;
+
+  object-fit: contain;
+  z-index: 1;
+  pointer-events: none;
+}
+
+
+
+
+
+@media (max-width: 900px) {
+  .hero-statue {
+    width: 110%;
+    right: -45%;
+    bottom: 0;
+    opacity: 0.55;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-statue {
+    width: 155%;
+    right: -85%;
+    opacity: 0.35;
+  }
+}
+
+/* GRAFITI HAMBURGUESA */
+
+.hero-burger-graffiti {
+  position: absolute;
+  width: 310px;
+  height: auto;
+  left: -145px;
+  bottom: -55px;
+  z-index: 2;
+  pointer-events: none;
+  transform: rotate(-8deg);
+  filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.5));
+}
+
+@media (max-width: 900px) {
+  .hero-burger-graffiti {
+    width: 230px;
+    left: -115px;
+    bottom: -35px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-burger-graffiti {
+    
+width: 400px;
+left: -175px;
+bottom: -65px;
+
+  }
+}
+
+/* AJUSTE FINAL DEL GRAFITI */
+
+.hero .hero-burger-graffiti {
+  position: absolute;
+  width: 400px;
+  height: auto;
+  left: -175px;
+  bottom: -65px;
+  max-width: none;
+  transform: rotate(-8deg);
+  z-index: 3;
+}
+
+/* GRAFITI DE CERVEZA */
+
+.hero .hero-beer-graffiti {
+  position: absolute;
+  width: 330px;
+  height: auto;
+  max-width: none;
+  right: -205px;
+  bottom: 65px;
+  z-index: 3;
+  transform: rotate(8deg);
+  pointer-events: none;
+  filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.5));
+}
+
+@media (max-width: 900px) {
+  .hero .hero-beer-graffiti {
+    
+width: 400px;
+right: -105px;
+bottom: 75px;
+
+  }
+}
+
+@media (max-width: 480px) {
+  .hero .hero-beer-graffiti {
+    width: 175px;
+    right: -115px;
+    bottom: 35px;
+  }
+}
+
+/* PRUEBA DE POSICIÓN DE LA CERVEZA */
+
+.hero .hero-art .hero-beer-graffiti {
+  width: 300px;
+  right: -105px;
+  bottom: 75px;
+  max-width: none;
+}
+
+/* TÍTULO AMERICAN - ESTILO ORIGINAL */
+
+.hero h1 > span:first-child {
+  display: block;
+  color: hsl(60, 4%, 95%);
+  font-style: italic;
+  font-weight: 900;
+  letter-spacing: -4px;
+  transform: skewX(-7deg);
+  transform-origin: left center;
+  text-shadow: 5px 7px 0 rgba(0, 0, 0, 0.55);
+}
+
+/* PINCELADA ROJA DEBAJO DE BAR PY */
+
+.title-yellow {
+  position: relative;
+  width: fit-content;
+}
+
+.title-yellow::after {
+  content: '';
+  position: absolute;
+  left: 12%;
+  bottom: -14px;
+  width: 72%;
+  height: 12px;
+  background: #e21b2d;
+  border-radius: 70% 20% 60% 30%;
+  transform: rotate(-5deg) skewX(-20deg);
+  clip-path: polygon(
+    0 45%, 12% 15%, 40% 0,
+    75% 12%, 100% 35%,
+    93% 65%, 55% 85%,
+    15% 100%, 3% 75%
+  );
+  z-index: -1;
+}
+
+/* TEXTURA ARTÍSTICA DEL FONDO */
+
+.hero {
+  isolation: isolate;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+
+  background-image:
+    radial-gradient(
+      circle at 8% 20%,
+      rgba(240, 240, 6, 0.12) 0 1px,
+      transparent 2px
+    ),
+    radial-gradient(
+      circle at 92% 65%,
+      rgba(230, 20, 35, 0.15) 0 1.5px,
+      transparent 3px
+    ),
+    radial-gradient(
+      circle at 15% 85%,
+      rgba(0, 100, 220, 0.12) 0 1px,
+      transparent 2px
+    );
+
+  background-size:
+    17px 19px,
+    23px 27px,
+    31px 29px;
+
+  opacity: 0.75;
+}
+
+/* PAPEL RASGADO EN EL BORDE INFERIOR */
+
+.hero {
+  position: relative;
+}
+
+/* FONDO ARTÍSTICO AMERICAN BAR PY */
+
+
+/* TEXTURA SUPERPUESTA SOBRE TODA LA PORTADA */
+
+.hero {
+  position: relative;
+  isolation: isolate;
+}
+
+
+/* TEXTURA SUPERPUESTA - TAMAÑO CORREGIDO */
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background-image: url('/images/textura-american.png');
+  background-position: center bottom;
+  background-size: 115% 115%;
+background-position: center bottom;;
+
+  mix-blend-mode: screen;
+  opacity: 1;
+
+  z-index: 20;
+  pointer-events: none;
+}
+
+/* PARED DE LADRILLOS GRAFITEADA */
+
+
+/* PARED DE LADRILLOS OSCURECIDA */
+
+.hero {
+  background-image:
+    linear-gradient(
+      rgba(0, 0, 0, 0.55),
+      rgba(0, 0, 0, 0.55)
+    ),
+    url('/images/pared-grafiti.png');
+
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: #080808;
+}
+
+/* LOGO OFICIAL EN EL ENCABEZADO */
+
+.brand-logo {
+  display: block;
+  width: auto;
+  height: 90px;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.navbar {
+  min-height: 110px;
+}
+
+/* BARRA INFERIOR DE EXPERIENCIAS */
+
+.hero-bottom {
+  position: absolute;
+  bottom: 40px;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  pointer-events: none;
+}
+
+
+/* BARRA DE EXPERIENCIAS */
+
+
+/* BARRA INFERIOR DE EXPERIENCIAS */
+
+
+/* BARRA INFERIOR - TAMAÑO CORREGIDO */
+
+
+/* BARRA INFERIOR DE EXPERIENCIAS */
+
+
+.barra-experiencias {
+  display: block;
+  width: 60%;
+  height: auto;
+  max-height: none;
+  object-fit: contain;
+}
+
+/* BAJAR LA BARRA DE EXPERIENCIAS */
+.hero-bottom {
+  bottom: 15px;
+}
+
+
+/* =====================================
+   SECCIÓN: CONOCÉ AMERICAN BAR PY
+   ESTILO DINER AMERICANO RETRO
+===================================== */
+
+.experiencia {
+  position: relative;
+  width: 100%;
+  padding: 110px 8%;
+  background-color: lab(0% 0 0);
+ 
+background-image:
+  repeating-linear-gradient(
+    0deg,
+    rgba(95, 65, 35, 0.025) 0px,
+    rgba(95, 65, 35, 0.025) 1px,
+    transparent 1px,
+    transparent 4px
+  ),
+  repeating-linear-gradient(
+    90deg,
+    rgba(95, 65, 35, 0.018) 0px,
+    rgba(95, 65, 35, 0.018) 1px,
+    transparent 1px,
+    transparent 5px
+  ),
+  radial-gradient(
+    circle at 20% 30%,
+    rgba(220, 150, 55, 0.07),
+    transparent 45%
+  );
+
+  overflow: hidden;
+}
+
+.experiencia::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 7px;
+  background: repeating-linear-gradient(
+    90deg,
+    #d63228 0px,
+    #d63228 45px,
+    #f7f1e6 45px,
+    #f7f1e6 60px
+  );
+}
+
+.experiencia-contenido {
+  position: relative;
+  z-index: 1;
+  max-width: 850px;
+}
+
+.experiencia-etiqueta {
+  display: block;
+  color: #d63228;
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: 4px;
+  margin-bottom: 25px;
+}
+
+.experiencia h2 {
+  color: #202a50;
+  font-size: clamp(38px, 5vw, 76px);
+  font-weight: 900;
+  line-height: 1.05;
+  margin: 0 0 30px;
+}
+
+.experiencia h2 span {
+  display: block;
+  color: #d63228;
+}
+
+.experiencia p {
+  max-width: 650px;
+  color: #414141;
+  font-size: 17px;
+  line-height: 1.9;
+}
+
+/* VERSIÓN PARA CELULARES */
+@media (max-width: 768px) {
+  .experiencia {
+    padding: 75px 6%;
+  }
+
+  .experiencia h2 {
+    font-size: 40px;
+  }
+
+  .experiencia p {
+    font-size: 15px;
+  }
+}
+
+/* CARTEL RETRO LAS VEGAS */
+
+.vegas-cartel {
+  position: relative;
+  width: min(100%, 620px);
+  margin: 0 auto 90px;
+  padding: 14px;
+  background: #fdfbf4;
+  border: 7px solid #d72e27;
+  outline: 5px solid #20315c;
+  border-radius: 35px;
+  box-shadow: 12px 12px 0 rgba(32, 49, 92, 0.18);
+  text-align: center;
+  transform: rotate(-2deg);
+}
+
+.vegas-cartel-interior {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  padding: 32px 16px 24px;
+  border: 3px solid #e5aa24;
+  border-radius: 22px;
+}
+
+.vegas-estrella {
+  position: absolute;
+  top: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #e5aa24;
+  font-size: 80px;
+  line-height: 1;
+  -webkit-text-stroke: 2px #20315c;
+}
+
+.vegas-bienvenida {
+  color: #20315c;
+  font-size: 19px;
+  font-weight: 800;
+  letter-spacing: 8px;
+}
+
+.vegas-american {
+  color: #d72e27;
+  font-size: clamp(40px, 7vw, 80px);
+  font-weight: 1000;
+  line-height: 1.1;
+  letter-spacing: -3px;
+}
+
+.vegas-bar {
+  color: #20315c;
+  font-size: clamp(34px, 6vw, 65px);
+  font-weight: 1000;
+  line-height: 1;
+}
+
+.vegas-ciudad {
+  margin-top: 12px;
+  color: #d72e27;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 4px;
+}
+
+@media (max-width: 768px) {
+  .vegas-cartel {
+    margin-bottom: 65px;
+    transform: rotate(-1deg);
+  }
+
+  .vegas-bienvenida {
+    font-size: 13px;
+    letter-spacing: 4px;
+  }
+
+  .vegas-american {
+    letter-spacing: -1px;
+  }
+}
+
+/* =====================================
+   GALERÍA DE FOTOS - AMERICAN BAR PY
+===================================== */
+
+.american-galeria {
+  position: relative;
+  width: 100%;
+  max-width: 1050px;
+  height: 540px;
+  margin: 0 auto 85px;
+  border: 8px solid #20315c;
+  border-radius: 14px;
+  background: #20315c;
+  box-shadow: 14px 14px 0 #d63228;
+  overflow: hidden;
+}
+
+.galeria-imagen {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.galeria-flecha {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 54px;
+  height: 54px;
+  border: 3px solid #20315c;
+  border-radius: 50%;
+  background: #f7f1e6;
+  color: #d63228;
+  font-size: 25px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.galeria-flecha:hover {
+  background: #d63228;
+  color: white;
+}
+
+.galeria-anterior {
+  left: 20px;
+}
+
+.galeria-siguiente {
+  right: 20px;
+}
+
+.galeria-contador {
+  position: absolute;
+  bottom: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 8px 18px;
+  border-radius: 30px;
+  background: #20315c;
+  color: white;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+/* VERSIÓN CELULAR */
+@media (max-width: 768px) {
+  .american-galeria {
+    height: 300px;
+    margin-bottom: 65px;
+    border-width: 5px;
+    box-shadow: 7px 7px 0 #d63228;
+  }
+
+  .galeria-flecha {
+    width: 38px;
+    height: 38px;
+    font-size: 18px;
+  }
+
+  .galeria-anterior {
+    left: 10px;
+  }
+
+  .galeria-siguiente {
+    right: 10px;
+  }
+
+  .galeria-contador {
+    bottom: 10px;
+    font-size: 12px;
+  }
+}
+
+/* MOSTRAR COMPLETA LA FOTO DE LA ESTATUA */
+
+.galeria-imagen-vertical {
+  object-fit: contain;
+  background-color: #20315c;
+}
+
+/* TRANSICIÓN SUAVE ENTRE FOTOGRAFÍAS */
+
+.galeria-transicion {
+  width: 100%;
+  height: 100%;
+  animation: aparecerFoto 0.55s ease-in-out;
+}
+
+@keyframes aparecerFoto {
+  from {
+    opacity: 0;
+    transform: scale(1.025);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .galeria-transicion {
+    animation: none;
+  }
+}
+
+/* =====================================
+   EFECTO SCROLL - SECCIONES SUPERPUESTAS
+===================================== */
+
+.hero {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.experiencia {
+  position: relative;
+  z-index: 2;
+}
+
+/* STICKER BROADWAY - NEW YORK */
+
+.sticker-broadway {
+  position: relative;
+  z-index: 3;
+  width: fit-content;
+  margin: -35px 8% 25px auto;
+  padding: 12px 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  background: #176b4c;
+  border: 4px solid #ffffff;
+  outline: 3px solid #176b4c;
+  border-radius: 7px;
+  color: white;
+  box-shadow: 7px 8px 0 rgba(32, 49, 92, 0.2);
+  transform: rotate(9deg);
+}
+
+.broadway-small {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 3px;
+}
+
+.broadway-main {
+  font-family: Arial, sans-serif;
+  font-size: clamp(19px, 3vw, 30px);
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+@media (max-width: 768px) {
+  .sticker-broadway {
+    margin: -15px 5% 30px auto;
+    padding: 9px 14px;
+    transform: rotate(6deg);
+  }
+
+  .broadway-small {
+    font-size: 8px;
+    letter-spacing: 2px;
+  }
+}
+
+/* =====================================
+   STICKER TAXI NEW YORK
+===================================== */
+
+.sticker-taxi {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: fit-content;
+  margin: -30px auto 45px 7%;
+  padding: 13px 28px 16px;
+  background: #f8c92b;
+  border: 4px solid #20315c;
+  border-radius: 12px;
+  color: #20315c;
+  box-shadow: 7px 7px 0 #d63228;
+  transform: rotate(-9deg);
+}
+
+.taxi-ciudad {
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 3px;
+}
+
+.taxi-icono {
+  font-size: 55px;
+  line-height: 1.2;
+}
+
+.taxi-texto {
+  font-size: 25px;
+  font-weight: 1000;
+  letter-spacing: -1px;
+}
+
+.taxi-numero {
+  margin-top: 3px;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+@media (max-width: 768px) {
+  .sticker-taxi {
+    margin: -20px auto 35px 5%;
+    padding: 10px 18px;
+    transform: rotate(-6deg);
+  }
+
+  .taxi-icono {
+    font-size: 42px;
+  }
+
+  .taxi-texto {
+    font-size: 20px;
+  }
+}
+
+/* =====================================
+   STICKER ROUTE 66 - VINTAGE USA
+===================================== */
+
+.sticker-route66 {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 145px;
+  height: 155px;
+  margin: -170px 8% 75px auto;
+  padding: 12px;
+  background: #fffdf4;
+  border: 6px solid #20315c;
+  border-radius: 20px 20px 45px 45px;
+  color: #20315c;
+  box-shadow: 7px 7px 0 #d63228;
+  transform: rotate(12deg);
+}
+
+.route66-us {
+  font-size: 19px;
+  font-weight: 1000;
+  line-height: 1;
+}
+
+.route66-numero {
+  font-size: 77px;
+  font-weight: 1000;
+  line-height: 1;
+  letter-spacing: -5px;
+}
+
+.route66-texto {
+  font-size: 17px;
+  font-weight: 900;
+  letter-spacing: 3px;
+}
+
+@media (max-width: 768px) {
+  .sticker-route66 {
+    width: 105px;
+    height: 115px;
+    margin: -135px 4% 70px auto;
+    border-width: 4px;
+    transform: rotate(8deg);
+  }
+
+  .route66-us {
+    font-size: 14px;
+  }
+
+  .route66-numero {
+    font-size: 55px;
+  }
+
+  .route66-texto {
+    font-size: 12px;
+  }
+}
+
+/* STICKER NEW YORK DINER */
+
+.sticker-diner {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: fit-content;
+  margin: 0 auto -100px 5%;
+  padding: 14px 25px;
+  background: #d63228;
+  border: 5px solid #fffdf4;
+  outline: 3px solid #20315c;
+  border-radius: 50%;
+  color: #fffdf4;
+  box-shadow: 7px 8px 0 rgba(32, 49, 92, 0.2);
+  transform: rotate(10deg);
+}
+
+.diner-estrellas {
+  color: #ffd342;
+  font-size: 16px;
+  letter-spacing: 5px;
+}
+
+.diner-newyork {
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 4px;
+}
+
+.diner-titulo {
+  font-size: clamp(30px, 5vw, 48px);
+  font-weight: 1000;
+  line-height: 1;
+  letter-spacing: -2px;
+}
+
+.diner-desde {
+  margin-top: 6px;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+@media (max-width: 768px) {
+  .sticker-diner {
+    padding: 12px 18px;
+    margin: 0 auto 20px 4%;
+    transform: rotate(6deg);
+  }
+}
+
+/* =====================================
+   TEXTO + VIDEO - AMERICAN BAR PY
+===================================== */
+
+.experiencia-contenido {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 420px);
+  align-items: center;
+  column-gap: 70px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* EL TEXTO QUEDA A LA IZQUIERDA */
+
+.experiencia-etiqueta,
+.experiencia-contenido h2,
+.experiencia-contenido p {
+  grid-column: 1;
+}
+
+/* EL VIDEO QUEDA A LA DERECHA */
+
+.experiencia-video {
+  grid-column: 2;
+  grid-row: 1 / 4;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  border: 7px solid #20315c;
+  border-radius: 16px;
+  background: #20315c;
+  box-shadow: 12px 12px 0 #d63228;
+  overflow: hidden;
+  transform: rotate(2deg);
+}
+
+
+.experiencia-video video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+
+/* VERSIÓN CELULAR */
+
+@media (max-width: 768px) {
+  .experiencia-contenido {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .experiencia-etiqueta,
+  .experiencia-contenido h2,
+  .experiencia-contenido p,
+  .experiencia-video {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+
+.experiencia-video video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+}
+
+/* =====================================
+   MENÚ AMERICAN BAR PY - ESTILO ORIGINAL
+===================================== */
+
+.menu-american {
+  position: relative;
+  z-index: 3;
+  min-height: 100vh;
+  padding: 100px 8%;
+  background-color: #f2eadb;
+  background-image:
+    radial-gradient(
+      circle at 20% 30%,
+      rgba(205, 128, 53, 0.08),
+      transparent 45%
+    ),
+    radial-gradient(
+      circle at 85% 75%,
+      rgba(32, 49, 92, 0.05),
+      transparent 40%
+    );
+  overflow: hidden;
+}
+
+/* ENCABEZADO DEL MENÚ */
+
+.menu-american-encabezado {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  margin: 0 auto 75px;
+}
+
+.menu-american-encabezado > span {
+  display: block;
+  margin-bottom: 15px;
+  color: #d63228;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 5px;
+}
+
+.menu-american-encabezado h2 {
+  margin: 0;
+  color: #20315c;
+  font-family: Impact, "Arial Narrow", sans-serif;
+  font-size: clamp(60px, 10vw, 145px);
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-shadow: 5px 5px 0 #e9a82c;
+}
+
+.menu-american-encabezado p {
+  margin-top: 25px;
+  color: #d63228;
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: 4px;
+}
+
+/* DETALLE DECORATIVO INFERIOR */
+
+.menu-american-encabezado::after {
+  content: "";
+  display: block;
+  width: 180px;
+  height: 7px;
+  margin: 35px auto 0;
+  background: repeating-linear-gradient(
+    110deg,
+    #e9a82c 0 15px,
+    transparent 15px 23px
+  );
+}
+
+/* CELULARES */
+
+@media (max-width: 768px) {
+  .menu-american {
+    padding: 75px 6%;
+  }
+
+  .menu-american-encabezado {
+    margin-bottom: 45px;
+  }
+
+  .menu-american-encabezado > span {
+    font-size: 10px;
+    letter-spacing: 2px;
+  }
+
+  .menu-american-encabezado p {
+    font-size: 11px;
+    letter-spacing: 2px;
+    line-height: 1.6;
+  }
+}
+
+/* =====================================
+   PRODUCTOS DEL MENÚ ORIGINAL
+===================================== */
+
+.menu-american-columnas {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 65px;
+  max-width: 1350px;
+  margin: 0 auto;
+}
+
+.menu-american-columna {
+  min-width: 0;
+}
+
+.menu-categoria {
+  margin-bottom: 55px;
+}
+
+.menu-categoria h3 {
+  margin: 0 0 24px;
+  color: #bd392e;
+  font-family: Impact, "Arial Narrow", sans-serif;
+  font-size: clamp(30px, 3vw, 47px);
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.menu-producto {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 10px 0;
+  border-bottom: 2px dotted rgba(32, 49, 92, 0.25);
+}
+
+.menu-producto-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.menu-producto-info h4 {
+  margin: 0 0 4px;
+  color: #20315c;
+  font-size: 19px;
+  font-weight: 900;
+}
+
+.menu-producto-info p {
+  margin: 0;
+  color: #444;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.menu-precio {
+  flex-shrink: 0;
+  padding: 5px 9px;
+  border-radius: 5px;
+  background: #bd392e;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 900;
+  white-space: nowrap;
+}
+
+/* VERSIÓN CELULAR */
+
+@media (max-width: 768px) {
+  .menu-american-columnas {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .menu-categoria {
+    margin-bottom: 40px;
+  }
+
+  .menu-producto-info h4 {
+    font-size: 16px;
+  }
+
+  .menu-precio {
+    font-size: 11px;
+    padding: 5px 7px;
+  }
+}
+
+/* PIZZAS - AMERICAN BAR PY */
+
+.menu-pizzas-subtitulo {
+  margin: -12px 0 20px;
+  color: #20315c;
+  font-family: Impact, "Arial Narrow", sans-serif;
+  font-size: 23px;
+  letter-spacing: 2px;
+}
+
+.menu-pizzas-extra {
+  margin-top: 18px;
+  color: #20315c;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.menu-pizzas-extra strong {
+  color: #d63228;
+  font-weight: 900;
+}
+
+/* =====================================
+   BEBIDAS - AMERICAN BAR PY
+===================================== */
+
+.bebidas-american {
+  position: relative;
+  z-index: 3;
+  min-height: 100vh;
+  padding: 100px 8%;
+  background: #20315c;
+}
+
+.bebidas-encabezado {
+  text-align: center;
+  margin-bottom: 75px;
+}
+
+.bebidas-encabezado span {
+  color: #f8c92b;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 5px;
+}
+
+.bebidas-encabezado h2 {
+  margin: 15px 0;
+  color: #fff5e6;
+  font-family: Impact, "Arial Narrow", sans-serif;
+  font-size: clamp(65px, 12vw, 150px);
+  line-height: 1;
+  text-shadow: 6px 6px 0 #d63228;
+}
+
+.bebidas-encabezado p {
+  color: #f8c92b;
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: 4px;
+}
+
+.bebidas-contenido {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 60px;
+  max-width: 1350px;
+  margin: 0 auto;
+}
+
+.bebidas-categoria {
+  padding: 30px;
+  border: 3px solid #f8c92b;
+  background: #f2eadb;
+}
+
+.bebidas-categoria h3 {
+  margin: 0;
+  color: #d63228;
+  font-family: Impact, "Arial Narrow", sans-serif;
+  font-size: clamp(28px, 3vw, 42px);
+}
+
+@media (max-width: 768px) {
+  .bebidas-american {
+    padding: 75px 6%;
+  }
+
+  .bebidas-contenido {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .bebidas-categoria {
+    padding: 22px;
+  }
+}
+
+/* ILUSTRACIÓN NYC DEL MENÚ */
+
+
+
+.menu-decoracion-nyc {
+  position: absolute;
+  top: 390px;
+  left: -35px;
+  width: 370px;
+  height: auto;
+  z-index: 0;
+  pointer-events: none;
+}
+
+
+.menu-american-columnas,
+.menu-american-encabezado {
+  position: relative;
+  z-index: 1;
+}
+
+
+
+@media (max-width: 768px) {
+  .menu-decoracion-nyc {
+    display: none;
+  }
+}
+
+/* ESPACIO PARA LA ILUSTRACIÓN NYC */
+
+
+@media (min-width: 1201px) {
+  .menu-american-columnas {
+    width: calc(100% - 270px);
+    max-width: 1350px;
+    margin-left: auto;
+    margin-right: 0;
+    gap: 55px;
+  }
+
+  .menu-decoracion-nyc {
+    top: 370px;
+    left: -35px;
+    width: 440px;
+  }
+}
+
+/* ILUSTRACIÓN DERECHA DEL MENÚ */
+
+.menu-decoracion-derecha {
+  position: absolute;
+  top: 420px;
+  right: -20px;
+  width: 260px;
+  height: auto;
+  z-index: 0;
+  pointer-events: none;
+}
+
+@media (max-width: 1200px) {
+  .menu-decoracion-derecha {
+    width: 160px;
+    right: -40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .menu-decoracion-derecha {
+    display: none;
+  }
+}
+
+/* =====================================
+   ESPACIO PARA LAS DOS ILUSTRACIONES
+===================================== */
+
+@media (min-width: 1201px) {
+
+  .menu-american-columnas {
+    width: calc(100% - 540px);
+    max-width: none;
+    margin-left: 270px;
+    margin-right: 270px;
+    gap: 45px;
+  }
+
+  
+
+.menu-decoracion-derecha {
+  top: 330px;
+  right: -110px;
+  width: 750px;
+  height: auto;
+  z-index: 0;
+  pointer-events: none;
+}
+}
+/* =====================================
+   DECORACIONES INFERIORES DEL MENÚ
+===================================== */
+
+@media (min-width: 1201px) {
+  .menu-decoracion-puente {
+    position: absolute;
+    top: 1150px;
+    left: -25px;
+    width: 440px;
+    height: auto;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  .menu-decoracion-pizza {
+    position: absolute;
+    top: 1150px;
+    right: -65px;
+    width: 550px;
+    height: auto;
+    z-index: 0;
+    pointer-events: none;
+  }
+}
+
+/* OCULTAR EN PANTALLAS MÁS PEQUEÑAS POR AHORA */
+
+@media (max-width: 1200px) {
+  .menu-decoracion-puente,
+  .menu-decoracion-pizza {
+    display: none;
+  }
+}
+
+@media (min-width: 1201px) {
+  .menu-decoracion-pizza {
+    right: -115px;
+  }
+}
+
+/* MENÚ MÁS LIMPIO Y EQUILIBRADO */
+
+.menu-decoracion-puente,
+.menu-decoracion-pizza {
+  display: none !important;
+}
+
+/* BOTÓN AGREGAR AL CARRITO */
+
+.menu-boton-agregar {
+  background: #c5362b;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 12px;
+  font-size: 11px;
+  font-weight: 800;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.2s ease;
+}
+
+.menu-boton-agregar:hover {
+  background: #93241d;
+}
+
+/* BOTÓN AGREGAR - ESTILO VINTAGE */
+
+.menu-boton-agregar {
+  background: transparent;
+  color: #102a43;
+  border: 2px solid #102a43;
+  border-radius: 6px;
+  padding: 7px 12px;
+  font-size: 11px;
+  font-weight: 800;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+
+.menu-boton-agregar:hover {
+  background: #102a43;
+  color: #ffffff;
+}
+
+/* CARRITO FLOTANTE */
+
+.carrito-flotante {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  z-index: 9999;
+  width: 65px;
+  height: 65px;
+  border: 2px solid #f3e8d5;
+  border-radius: 50%;
+  background: #c5362b;
+  color: white;
+  font-size: 27px;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carrito-contador {
+  position: absolute;
+  top: -7px;
+  right: -7px;
+  background: #102a43;
+  color: white;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  min-width: 25px;
+  height: 25px;
+  padding: 0 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.carrito-flotante:hover {
+  background: #9e2922;
+}
+
+/* PANEL LATERAL DEL CARRITO */
+
+.carrito-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+}
+
+.carrito-fondo {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+}
+
+.carrito-panel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: min(420px, 100%);
+  height: 100%;
+  background: #f5ead6;
+  color: #102a43;
+  display: flex;
+  flex-direction: column;
+  box-shadow: -8px 0 30px rgba(0, 0, 0, 0.25);
+}
+
+.carrito-header {
+  background: #102a43;
+  color: white;
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.carrito-header h2 {
+  margin: 0;
+  font-size: 22px;
+}
+
+.carrito-header button {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.carrito-contenido {
+  flex: 1;
+  overflow-y: auto;
+  padding: 24px;
+}
+
+.carrito-vacio {
+  text-align: center;
+  margin-top: 40px;
+  color: #667;
+}
+
+.carrito-item {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 16px 0;
+  border-bottom: 1px solid #d6c6ab;
+}
+
+.carrito-item strong {
+  font-size: 15px;
+}
+
+.carrito-item p {
+  font-size: 13px;
+  margin: 6px 0 0;
+}
+
+.carrito-item span {
+  font-size: 14px;
+  font-weight: 800;
+  color: #c5362b;
+  white-space: nowrap;
+}
+
+.carrito-footer {
+  padding: 24px;
+  border-top: 2px solid #102a43;
+}
+
+.carrito-total {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 19px;
+}
+
+/* ANIMACIÓN DE APERTURA DEL CARRITO */
+
+.carrito-panel {
+  animation: carritoEntrar 0.35s ease-out both;
+}
+
+.carrito-fondo {
+  animation: fondoAparecer 0.35s ease-out both;
+}
+
+@keyframes carritoEntrar {
+  from {
+    transform: translateX(100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes fondoAparecer {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .carrito-panel,
+  .carrito-fondo {
+    animation: none;
+  }
+}
+
+/* CORRECCIÓN: CARRITO OCULTO AL INICIAR */
+
+.carrito-overlay.carrito-oculto {
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.carrito-overlay.carrito-oculto .carrito-panel {
+  transform: translateX(100%);
+}
+
+.carrito-overlay.carrito-oculto .carrito-fondo {
+  opacity: 0;
+}
+
+.carrito-overlay.carrito-visible {
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.carrito-overlay.carrito-visible .carrito-panel {
+  transform: translateX(0);
+}
+
+.carrito-overlay.carrito-visible .carrito-fondo {
+  opacity: 1;
+}
+
+/* ANIMACIONES DEFINITIVAS DEL CARRITO */
+
+.carrito-overlay {
+  visibility: hidden;
+  pointer-events: none;
+  transition: visibility 0s linear 0.4s;
+}
+
+.carrito-overlay.carrito-visible {
+  visibility: visible;
+  pointer-events: auto;
+  transition: visibility 0s;
+}
+
+.carrito-panel {
+  animation: none !important;
+  transform: translateX(100%);
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.carrito-overlay.carrito-visible .carrito-panel {
+  transform: translateX(0);
+}
+
+.carrito-overlay.carrito-oculto .carrito-panel {
+  transform: translateX(100%);
+}
+
+.carrito-fondo {
+  animation: none !important;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.carrito-overlay.carrito-visible .carrito-fondo {
+  opacity: 1;
+}
+
+.carrito-overlay.carrito-oculto .carrito-fondo {
+  opacity: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .carrito-overlay,
+  .carrito-panel,
+  .carrito-fondo {
+    transition: none;
+  }
+}
+
+/* ANIMACIÓN AL AGREGAR PRODUCTOS */
+
+.menu-boton-agregar.agregado {
+  background: #102a43;
+  color: white;
+  border-color: #102a43;
+  animation: productoAgregado 0.55s ease;
+}
+
+@keyframes productoAgregado {
+  0% {
+    transform: scale(1);
+  }
+
+  35% {
+    transform: scale(1.1);
+  }
+
+  70% {
+    transform: scale(0.97);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .menu-boton-agregar.agregado {
+    animation: none;
+  }
+}
+
+/* CONTROLES DE CANTIDAD DEL CARRITO */
+
+.carrito-controles {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.carrito-controles button {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #102a43;
+  border-radius: 6px;
+  background: transparent;
+  color: #102a43;
+  font-size: 19px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.carrito-controles button:hover {
+  background: #102a43;
+  color: white;
+}
+
+.carrito-controles span {
+  min-width: 18px;
+  text-align: center;
+  color: #102a43;
+  font-size: 15px;
+  font-weight: 800;
+}
+
+/* REBOTE DEL CARRITO AL AGREGAR PRODUCTOS */
+
+.carrito-flotante.carrito-rebote {
+  animation: reboteCarrito 0.55s ease;
+}
+
+@keyframes reboteCarrito {
+  0% {
+    transform: scale(1);
+  }
+
+  35% {
+    transform: scale(1.2) rotate(-8deg);
+  }
+
+  65% {
+    transform: scale(0.95) rotate(5deg);
+  }
+
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .carrito-flotante.carrito-rebote {
+    animation: none;
+  }
+}
+
+/* ====================================
+   CARRITO RESPONSIVE PARA CELULARES
+==================================== */
+
+@media (max-width: 768px) {
+  .carrito-overlay {
+    position: fixed !important;
+    inset: 0 !important;
+    z-index: 10000 !important;
+    width: 100% !important;
+    height: 100dvh !important;
+  }
+
+  .carrito-panel {
+    position: absolute !important;
+    top: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 100dvh !important;
+    background: #f5ead6 !important;
+    color: #102a43 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    overflow: hidden !important;
+    box-sizing: border-box !important;
+  }
+
+  .carrito-header {
+    background: #102a43 !important;
+    color: #fff !important;
+    padding: 20px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+  }
+
+  .carrito-header h2 {
+    margin: 0 !important;
+    font-size: 20px !important;
+    color: #fff !important;
+  }
+
+  .carrito-header button {
+    background: transparent !important;
+    border: none !important;
+    color: #fff !important;
+    font-size: 24px !important;
+  }
+
+  .carrito-contenido {
+    flex: 1 !important;
+    min-height: 0 !important;
+    overflow-y: auto !important;
+    padding: 20px !important;
+  }
+
+  .carrito-footer {
+    padding: 20px !important;
+    background: #f5ead6 !important;
+    border-top: 2px solid #102a43 !important;
+  }
+
+  .carrito-item {
+    display: flex !important;
+    justify-content: space-between !important;
+    gap: 12px !important;
+    border-bottom: 1px solid #d6c6ab !important;
+    padding: 15px 0 !important;
+  }
+
+  .carrito-flotante {
+    position: fixed !important;
+    right: 18px !important;
+    bottom: 18px !important;
+    z-index: 9999 !important;
+  }
+}
+
+
+/* TEXTURA VINTAGE MÁS VISIBLE EN EL MENÚ */
+
+.menu-american {
+  background-color: lch(98.77% 0.7 18.52);
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      rgba(105, 72, 35, 0.09) 0px,
+      rgba(105, 72, 35, 0.09) 1px,
+      transparent 1px,
+      transparent 5px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      rgba(105, 72, 35, 0.065) 0px,
+      rgba(105, 72, 35, 0.065) 1px,
+      transparent 1px,
+      transparent 6px
+    ),
+    radial-gradient(
+      ellipse at 15% 25%,
+      rgba(170, 110, 40, 0.16),
+      transparent 55%
+    ),
+    radial-gradient(
+      ellipse at 85% 75%,
+      rgba(145, 95, 40, 0.13),
+      transparent 55%
+    );
+}
+
+/* TEXTURA OSCURA VINTAGE - EXPERIENCIA */
+
+.experiencia {
+  background-color: #101010;
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      transparent 0px,
+      transparent 3px,
+      rgba(255, 255, 255, 0.045) 4px,
+      transparent 5px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent 0px,
+      transparent 5px,
+      rgba(255, 255, 255, 0.025) 6px,
+      transparent 7px
+    ),
+    radial-gradient(
+      ellipse at 25% 30%,
+      rgba(110, 75, 40, 0.18),
+      transparent 55%
+    ),
+    radial-gradient(
+      ellipse at 80% 70%,
+      rgba(80, 80, 80, 0.16),
+      transparent 60%
+    );
+}
+
+/* FRASE AFTER EN BLANCO */
+
+.experiencia h2 span {
+  color: #ffffff !important;
+}
+
+
+/* COLORES DEL TÍTULO DE EXPERIENCIA */
+
+.experiencia h2 {
+  color: #ffffff !important;
+}
+
+.experiencia h2 span {
+  color: #df302b !important;
+}
+
+/* TEXTO DESCRIPTIVO DE EXPERIENCIA EN BLANCO */
+
+.experiencia p {
+  color: #ffffff !important;
+}
+
+/* SEPARADOR ENTRE EXPERIENCIA Y MENÚ */
+
+.menu-american {
+  border-top: 7px solid transparent;
+  border-image: repeating-linear-gradient(
+    90deg,
+    #df302b 0px,
+    #df302b 45px,
+    #ffffff 45px,
+    #ffffff 60px
+  ) 1;
+}
+/* AJUSTES DE IMÁGENES SOLO PARA CELULARES */
+@media (max-width: 768px) {
+
+  /* Hamburguesa */
+  .hero .hero-burger-graffiti {
+    width: 210px !important;
+    max-width: none !important;
+    left: -95px !important;
+    bottom: -25px !important;
+  }
+
+  /* Cerveza */
+  .hero .hero-beer-graffiti {
+    width: 175px !important;
+    max-width: none !important;
+    right: -85px !important;
+    bottom: 30px !important;
+  }
+
+}
+/* ESTATUA DE LA LIBERTAD SOLO EN CELULARES */
+@media (max-width: 768px) {
+  .hero .hero-statue {
+    height: 48% !important;
+    width: auto !important;
+    max-width: none !important;
+
+    right: -110px !important;
+    bottom: 10px !important;
+
+    opacity: 0.65 !important;
+    z-index: 1 !important;
+    pointer-events: none !important;
+  }
+}
+/* TEXTURA RETRO PARA LA SECCIÓN BEBIDAS */
+.bebidas {
+  background-color: #20335c;
+  background-image:
+    radial-gradient(
+      circle,
+      rgba(255, 255, 255, 0.11) 0.8px,
+      transparent 1.2px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      transparent 0px,
+      transparent 5px,
+      rgba(0, 0, 0, 0.09) 6px
+    );
+
+  background-size: 6px 6px, 100% 7px;
+}
+/* TEXTURA RETRO PARA EL FONDO DE BEBIDAS */
+.bebidas-american {
+  background-color: #20335c !important;
+
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      transparent 0px,
+      transparent 3px,
+      rgba(0, 0, 0, 0.13) 4px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent 0px,
+      transparent 3px,
+      rgba(255, 255, 255, 0.055) 4px
+    ) !important;
+
+  background-size: 5px 5px !important;
+}
+
+/* ==========================================
+   SECCIÓN VENÍ A VISITARNOS
+   ========================================== */
+.visitanos {
+  position: relative;
+  display: block !important;
+  width: 100%;
+  min-height: 650px;
+  padding: 100px 7%;
+  background: #f5eddf !important;
+  color: #20335c !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  z-index: 10;
+  overflow: visible;
+}
+
+.visitanos-encabezado {
+  text-align: center;
+  margin-bottom: 65px;
+}
+
+.visitanos-encabezado span {
+  display: block;
+  color: #d72e28;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 5px;
+  margin-bottom: 15px;
+}
+
+.visitanos-encabezado h2 {
+  color: #20335c;
+  font-size: clamp(42px, 7vw, 95px);
+  font-weight: 1000;
+  line-height: 1;
+  text-shadow: 4px 4px 0 #f0ad20;
+  margin: 0 0 20px;
+}
+
+.visitanos-encabezado p {
+  color: #d72e28;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.visitanos-contenido {
+  max-width: 1250px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 55px;
+  align-items: stretch;
+}
+
+.visitanos-informacion {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.visitanos-dato {
+  border-left: 5px solid #d72e28;
+  padding: 10px 0 10px 22px;
+}
+
+.visitanos-dato h3 {
+  color: #20335c;
+  font-size: 23px;
+  font-weight: 900;
+  margin: 0 0 12px;
+}
+
+.visitanos-dato p {
+  color: #3d3d3d;
+  font-size: 16px;
+  line-height: 1.8;
+  margin: 0;
+}
+
+.visitanos-dato a {
+  color: #d72e28;
+  font-size: 23px;
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.visitanos-dato a:hover {
+  text-decoration: underline;
+}
+
+.visitanos-whatsapp {
+  display: inline-block;
+  align-self: flex-start;
+  background: #f9c91d;
+  color: #14264a;
+  padding: 18px 24px;
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  text-decoration: none;
+  border: 2px solid #14264a;
+  box-shadow: 5px 5px 0 #d72e28;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.visitanos-whatsapp:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 7px 7px 0 #d72e28;
+}
+
+.visitanos-mapa {
+  background: #20335c;
+  padding: 9px;
+  border: 3px solid #20335c;
+  box-shadow: 10px 10px 0 #d72e28;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.visitanos-mapa iframe {
+  display: block;
+  width: 100%;
+  flex: 1;
+  min-height: 420px;
+}
+
+.visitanos-mapa a {
+  display: block;
+  padding: 12px;
+  text-align: center;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  text-decoration: none;
+}
+
+.visitanos-mapa a:hover {
+  color: #f9c91d;
+}
+
+/* RESPONSIVE: SOLO CELULARES */
+
+@media (max-width: 768px) {
+  .visitanos {
+    padding: 70px 6% 85px;
+  }
+
+  .visitanos-encabezado {
+    margin-bottom: 40px;
+  }
+
+  .visitanos-encabezado span {
+    font-size: 10px;
+    letter-spacing: 2px;
+  }
+
+  .visitanos-encabezado h2 {
+    font-size: clamp(36px, 10vw, 56px);
+    text-shadow: 3px 3px 0 #f0ad20;
+  }
+
+  .visitanos-encabezado p {
+    font-size: 12px;
+    letter-spacing: 1px;
+  }
+
+  .visitanos-contenido {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .visitanos-dato h3 {
+    font-size: 20px;
+  }
+
+  .visitanos-dato p {
+    font-size: 14px;
+  }
+
+  .visitanos-whatsapp {
+    align-self: stretch;
+    text-align: center;
+  }
+
+  .visitanos-mapa iframe {
+    min-height: 320px;
+    height: 320px;
+  }
+}
+/* SEPARADOR BEBIDAS / UBICACIÓN */
+.separador-ubicacion {
+  position: relative;
+  z-index: 20;
+  width: 100%;
+  min-height: 85px;
+  margin: 0;
+  padding: 20px;
+  background: #20335c;
+  border-top: 5px solid #f9c928;
+  border-bottom: 5px solid #d72e28;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 28px;
+}
+
+.separador-ubicacion p {
+  margin: 0;
+  color: #fff;
+  font-size: 17px;
+  font-weight: 900;
+  letter-spacing: 5px;
+}
+
+.separador-ubicacion span {
+  color: #f9c928;
+  font-size: 28px;
+}
+/* ========================================
+   VENÍ A VISITARNOS — ESTILO NEGRO NYC
+======================================== */
+
+.visitanos {
+  background-color: #090909 !important;
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      transparent 0px,
+      transparent 35px,
+      rgba(255, 255, 255, 0.055) 36px,
+      transparent 38px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent 0px,
+      transparent 105px,
+      rgba(255, 255, 255, 0.035) 106px,
+      transparent 108px
+    ),
+    radial-gradient(
+      circle at 50% 30%,
+      #222222 0%,
+      #090909 75%
+    ) !important;
+
+  color: #ffffff !important;
+}
+
+/* TÍTULO PRINCIPAL */
+.visitanos-encabezado h2 {
+  color: #ffffff !important;
+  text-shadow: 4px 4px 0 #d72e28;
+}
+
+/* SUBTÍTULO */
+.visitanos-encabezado p {
+  color: #eeeeee !important;
+}
+
+/* ETIQUETA SUPERIOR */
+.visitanos-encabezado span {
+  color: #ffcc25 !important;
+}
+
+/* TÍTULOS: DIRECCIÓN, HORARIOS Y CONTACTO */
+.visitanos-dato h3 {
+  color: #ffffff !important;
+}
+
+/* TEXTOS DE INFORMACIÓN */
+.visitanos-dato p {
+  color: #e5e5e5 !important;
+}
+
+/* NÚMERO DE TELÉFONO */
+.visitanos-dato a {
+  color: #ffcc25 !important;
+}
+
+/* MARCO DEL MAPA */
+.visitanos-mapa {
+  background: #151515;
+  border: 3px solid #ffcc25;
+  box-shadow: 10px 10px 0 #d72e28;
+}
+
+/* ENLACE DE GOOGLE MAPS */
+.visitanos-mapa > a {
+  color: #ffffff !important;
+}
+.carrito-pedido-whatsapp {
+  width: 100%;
+  margin-top: 18px;
+  padding: 16px 12px;
+  background: #25d366;
+  color: white;
+  border: 2px solid #111;
+  border-radius: 4px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  font-weight: 900;
+  cursor: pointer;
+  box-shadow: 4px 4px 0 #111;
+  transition: 0.2s ease;
+}
+
+.carrito-pedido-whatsapp:hover:not(:disabled) {
+  background: #1fb957;
+  transform: translateY(-2px);
+}
+
+.carrito-pedido-whatsapp:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+
+
